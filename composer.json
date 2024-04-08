@@ -1,0 +1,19 @@
+{
+    "name": "madbyad/mpl-number-converter",
+    "description": "A simple PHP library used for number conversion",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MadByAd\\MPLNumberConverter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MadByAd",
+            "email": "adityaaw84@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
