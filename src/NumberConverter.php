@@ -26,23 +26,6 @@ namespace MadByAd\MPLNumberConverter;
 class NumberConverter
 {
 
-    /**
-     * 
-     * This method is used for converting a number to a roman numeral
-     * 
-     * @example the number `16` will be converted to `XVI`
-     * @example the number `64` will be converted to `LXIV`
-     * @example the number `128` will be converted to `CXXVIII`
-     * 
-     * @param int $int the number which will be converted to roman numeral
-     * 
-     * @return string
-     * 
-     */
-
-    public static function toRoman($int)
-    {
-        return "Hello World\n";
-    }
+    use RomanConverter;
     
 }
