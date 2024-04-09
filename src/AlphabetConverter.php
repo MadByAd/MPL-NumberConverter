@@ -6,14 +6,13 @@
  * 
  * @author    MadByAd <adityaaw84@gmail.com>
  * @license   MIT License
- * @copyright Copyright (c) MadByAd 2023
+ * @copyright Copyright (c) MadByAd 2024
  * 
  */
 
 namespace MadByAd\MPLNumberConverter;
 
 use MadByAd\MPLNumberConverter\Exceptions\AlphabetInvalidLetterException;
-use MadByAd\MPLNumberConverter\Exceptions\AlphabetNegativeException;
 use MadByAd\MPLNumberConverter\Exceptions\AlphabetValueNegativeException;
 use MadByAd\MPLNumberConverter\Exceptions\AlphabetValueZeroException;
 
@@ -35,7 +34,7 @@ trait AlphabetConverter
      * @var array
      */
 
-    private static $alphabet = [
+    private static array $alphabet = [
         26 => "Z",
         25 => "Y",
         24 => "X",

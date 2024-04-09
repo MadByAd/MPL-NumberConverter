@@ -6,7 +6,7 @@
  * 
  * @author    MadByAd <adityaaw84@gmail.com>
  * @license   MIT License
- * @copyright Copyright (c) MadByAd 2023
+ * @copyright Copyright (c) MadByAd 2024
  * 
  */
 

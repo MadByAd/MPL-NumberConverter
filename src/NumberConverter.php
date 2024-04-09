@@ -6,7 +6,7 @@
  * 
  * @author    MadByAd <adityaaw84@gmail.com>
  * @license   MIT License
- * @copyright Copyright (c) MadByAd 2023
+ * @copyright Copyright (c) MadByAd 2024
  * 
  */
 
@@ -19,13 +19,14 @@ namespace MadByAd\MPLNumberConverter;
  * 
  * @author    MadByAd <adityaaw84@gmail.com>
  * @license   MIT License
- * @copyright Copyright (c) MadByAd 2023
+ * @copyright Copyright (c) MadByAd 2024
  * 
  */
 
 class NumberConverter
 {
 
+    use Abbreviater;
     use AlphabetConverter;
     use RomanConverter;
     

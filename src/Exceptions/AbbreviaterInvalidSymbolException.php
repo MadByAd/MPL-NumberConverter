@@ -16,11 +16,11 @@ use Exception;
 
 /**
  * 
- * The RomanValueNegativeException
+ * The AbbreviaterInvalidSymbolException
  * 
  * @author MadByAd <adityaaw84@gmail.com>
  * 
  */
 
-class RomanValueNegativeException extends Exception
+class AbbreviaterInvalidSymbolException extends Exception
 {}
