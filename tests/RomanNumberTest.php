@@ -1,6 +1,6 @@
 <?php
 
-use MadByAd\MPLNumberConverter\Exceptions\RomanNegativeException;
+use MadByAd\MPLNumberConverter\Exceptions\RomanValueNegativeException;
 use MadByAd\MPLNumberConverter\Exceptions\RomanValueLimitException;
 use MadByAd\MPLNumberConverter\NumberConverter;
 use PHPUnit\Framework\TestCase;
@@ -50,7 +50,7 @@ final class RomanNumberTest extends TestCase
     public function testCanThrowException()
     {
 
-        $this->expectException(RomanNegativeException::class);
+        $this->expectException(RomanValueNegativeException::class);
 
         NumberConverter::normalToRoman(-1);
 

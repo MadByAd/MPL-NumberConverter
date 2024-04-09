@@ -16,11 +16,11 @@ use Exception;
 
 /**
  * 
- * The RomanNegativeException
+ * The AlphabetValueNegativeException
  * 
  * @author MadByAd <adityaaw84@gmail.com>
  * 
  */
 
-class RomanNegativeException extends Exception
+class AlphabetValueNegativeException extends Exception
 {}

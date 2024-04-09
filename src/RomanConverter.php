@@ -12,7 +12,7 @@
 
 namespace MadByAd\MPLNumberConverter;
 
-use MadByAd\MPLNumberConverter\Exceptions\RomanNegativeException;
+use MadByAd\MPLNumberConverter\Exceptions\RomanValueNegativeException;
 use MadByAd\MPLNumberConverter\Exceptions\RomanValueLimitException;
 
 /**
@@ -79,14 +79,14 @@ trait RomanConverter
      * 
      * @param int $int the number which will be converted to roman numeral
      * 
-     * @return string
+     * @return string The roman numeral
      */
 
     public static function normalToRoman(int $int)
     {
 
         if($int <= 0) {
-            throw new RomanNegativeException("error cannot convert negative number to roman numeral");
+            throw new RomanValueNegativeException("error cannot convert negative number to roman numeral");
         }
 
         if($int >= self::$romanLimit) {
@@ -123,7 +123,7 @@ trait RomanConverter
      * 
      * @param string $roman the roman numeral which will be converted to a normal number
      * 
-     * @return int
+     * @return int The normal number
      */
 
     public static function romanToNormal(string $roman)
