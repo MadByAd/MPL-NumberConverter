@@ -12,8 +12,10 @@
 
 namespace MadByAd\MPLNumberConverter;
 
+use MadByAd\MPLNumberConverter\Exceptions\RomanInvalidLetterException;
 use MadByAd\MPLNumberConverter\Exceptions\RomanValueNegativeException;
 use MadByAd\MPLNumberConverter\Exceptions\RomanValueLimitException;
+use MadByAd\MPLNumberConverter\Exceptions\RomanValueZeroException;
 
 /**
  * 
@@ -82,11 +84,15 @@ trait RomanConverter
      * @return string The roman numeral
      */
 
-    public static function normalToRoman(int $int)
+    public static function numberToRoman(int $int)
     {
 
         if($int <= 0) {
             throw new RomanValueNegativeException("error cannot convert negative number to roman numeral");
+        }
+
+        if($int == 0) {
+            throw new RomanValueZeroException("error cannot convert a zero to a roman numeral no letter exist");
         }
 
         if($int >= self::$romanLimit) {
@@ -114,7 +120,7 @@ trait RomanConverter
     }
 
     /**
-     * The opposite of the normalToRoman method. this method will convert a roman number
+     * The opposite of the numberToRoman method. this method will convert a roman number
      * to a normal number
      * 
      * @example the roman numeral `XVI` will be converted to `16`
@@ -126,7 +132,7 @@ trait RomanConverter
      * @return int The normal number
      */
 
-    public static function romanToNormal(string $roman)
+    public static function romanToNumber(string $roman)
     {
         
         $number = 0;
@@ -139,6 +145,7 @@ trait RomanConverter
             
             $letter = $roman[$i];
             $nextLetter = "";
+            $letterFound = false;
 
             if(isset($roman[$i + 1])) {
                 $nextLetter = $roman[$i + 1];
@@ -151,6 +158,7 @@ trait RomanConverter
                 if($symbol == $romanSymbol || $letter == $romanSymbol) {
                     
                     $number += $value;
+                    $letterFound = true;
                     
                     if(in_array($value, [4, 40, 400, 4000, 40_000, 400_000, 9, 90, 900, 9000, 90_000, 900_000])) {
                         $i += 1;
@@ -159,6 +167,10 @@ trait RomanConverter
                     break;
                 }
 
+            }
+
+            if(!$letterFound) {
+                throw new RomanInvalidLetterException("error invalid letter \"{$letter}\" cannot convert \"{$letter}\" to an integer value");
             }
 
         }

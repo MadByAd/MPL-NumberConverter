@@ -12,7 +12,10 @@
 
 namespace MadByAd\MPLNumberConverter;
 
+use MadByAd\MPLNumberConverter\Exceptions\AlphabetInvalidLetterException;
 use MadByAd\MPLNumberConverter\Exceptions\AlphabetNegativeException;
+use MadByAd\MPLNumberConverter\Exceptions\AlphabetValueNegativeException;
+use MadByAd\MPLNumberConverter\Exceptions\AlphabetValueZeroException;
 
 /**
  * 
@@ -70,7 +73,7 @@ trait AlphabetConverter
      * @example the number `32` will be converted to `ZF`
      * @example the number `52` will be converted to `ZZ`
      * 
-     * @param int $number the number
+     * @param int $number the number which will be converted to an alphabet
      * 
      * @return string The alphabet
      */
@@ -79,10 +82,12 @@ trait AlphabetConverter
     {
 
         if($number < 0) {
-            throw new AlphabetNegativeException("error cannot convert a negative number into an alphabet");
+            throw new AlphabetValueNegativeException("error cannot convert a negative number into an alphabet");
         }
 
-        
+        if($number == 0) {
+            throw new AlphabetValueZeroException("error cannot convert zero to an alphabet no letter exist");
+        }
 
         $alphabet = "";
 
@@ -106,5 +111,47 @@ trait AlphabetConverter
 
     }
 
+    /**
+     * This method is the opposite og the numberToAlphabet method. this method
+     * is used for converting an alphabet into a number
+     * 
+     * @example the number `1` will be converted to `A`
+     * @example the number `12` will be converted to `L`
+     * @example the number `32` will be converted to `ZF`
+     * @example the number `52` will be converted to `ZZ`
+     * 
+     * @param string $alphabet The alphabet which will be converted into a number
+     * 
+     * @return int the number
+     */
+
+    public static function alphabetToNumber(string $alphabet)
+    {
+
+        $number = 0;
+
+        for($i = 0; $i < strlen($alphabet); $i++) {
+
+            $letterFound = false;
+            
+            foreach(self::$alphabet as $value => $letter) {
+            
+                if($alphabet[$i] == $letter) {
+                    $number += $value;
+                    $letterFound = true;
+                    break;
+                }
+
+            }
+
+            if(!$letterFound) {
+                throw new AlphabetInvalidLetterException("error invalid letter \"{$alphabet[$i]}\" cannot convert \"{$alphabet[$i]}\" to an integer value");
+            }
+
+        }
+
+        return $number;
+
+    }
 
 }

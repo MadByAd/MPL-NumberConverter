@@ -1,6 +1,7 @@
 <phpunit bootstrap="vendor/autoload.php" colors="true" processIsolation="true" testdox="true">
     <testsuites>
         <testsuite name="number">
+            <file>tests/AlphabetConversionTest.php</file>
             <file>tests/RomanNumberTest.php</file>
         </testsuite>
     </testsuites>

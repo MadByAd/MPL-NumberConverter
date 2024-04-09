@@ -26,6 +26,7 @@ namespace MadByAd\MPLNumberConverter;
 class NumberConverter
 {
 
+    use AlphabetConverter;
     use RomanConverter;
     
 }
