@@ -141,6 +141,8 @@ trait Abbreviater
      * ```
      * 
      * @return int the deabbreviated number
+     * 
+     * @throws AbbreviaterInvalidSymbolException if the symbol is invalid
      */
 
     public static function abbreviateToNumber(string $abbreviatedNumber, array $symbolSet = null)

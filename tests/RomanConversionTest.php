@@ -5,7 +5,7 @@ use MadByAd\MPLNumberConverter\Exceptions\RomanValueLimitException;
 use MadByAd\MPLNumberConverter\NumberConverter;
 use PHPUnit\Framework\TestCase;
 
-final class RomanNumberTest extends TestCase
+final class RomanConversionTest extends TestCase
 {
 
     /**

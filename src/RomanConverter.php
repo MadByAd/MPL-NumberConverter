@@ -44,18 +44,18 @@ trait RomanConverter
      */
 
     private static array $romanLetter = [
-        1_000_000 => "_M",
-        900_000 => "_C_M",
-        500_000 => "_D",
-        400_000 => "_C_D",
-        100_000 => "_C",
-        90_000 => "_X_C",
-        50_000 => "_L",
-        40_000 => "_X_L",
-        10_000 => "_X",
-        9000 => "M_X",
-        5000 => "_V",
-        4000 => "M_V",
+        1_000_000 => "m",
+        900_000 => "cm",
+        500_000 => "d",
+        400_000 => "cd",
+        100_000 => "c",
+        90_000 => "xc",
+        50_000 => "l",
+        40_000 => "xl",
+        10_000 => "x",
+        9000 => "Mx",
+        5000 => "v",
+        4000 => "Mv",
         1000 => "M",
         900 => "CM",
         500 => "D",
@@ -82,6 +82,11 @@ trait RomanConverter
      * @param int $int the number which will be converted to roman numeral
      * 
      * @return string The roman numeral
+     * 
+     * @throws RomanValueNegativeException if the given integer is negative
+     * @throws RomanValueZeroException if the given integer is zero `0`
+     * @throws RomanValueLimitException if the given integer exceeds the integer
+     *                                  limit which is `10.000.000`
      */
 
     public static function numberToRoman(int $int)
@@ -130,6 +135,9 @@ trait RomanConverter
      * @param string $roman the roman numeral which will be converted to a normal number
      * 
      * @return int The normal number
+     * 
+     * @throws RomanInvalidLetterException if the given string contains an invalid
+     *                                     symbol (non roman letter / symbol)
      */
 
     public static function romanToNumber(string $roman)

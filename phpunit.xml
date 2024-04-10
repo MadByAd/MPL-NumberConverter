@@ -3,7 +3,8 @@
         <testsuite name="number">
             <file>tests/AbbreviateNumberTest.php</file>
             <file>tests/AlphabetConversionTest.php</file>
-            <file>tests/RomanNumberTest.php</file>
+            <file>tests/BinaryConversionTest.php</file>
+            <file>tests/RomanConversionTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>

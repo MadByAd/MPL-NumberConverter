@@ -75,6 +75,10 @@ trait AlphabetConverter
      * @param int $number the number which will be converted to an alphabet
      * 
      * @return string The alphabet
+     * 
+     * @throws AlphabetValueNegativeException if the given number is a negative
+     *                                        value
+     * @throws AlphabetValueZeroException if the given number is zero `0`
      */
 
     public static function numberToAlphabet(int $number)
@@ -122,6 +126,9 @@ trait AlphabetConverter
      * @param string $alphabet The alphabet which will be converted into a number
      * 
      * @return int the number
+     * 
+     * @throws AlphabetInvalidLetterException if the string contains an invalid
+     *                                        letter (non alphabet character)
      */
 
     public static function alphabetToNumber(string $alphabet)

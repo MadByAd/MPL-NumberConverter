@@ -7,6 +7,10 @@ use PHPUnit\Framework\TestCase;
 final class AbbreviateNumberTest extends TestCase
 {
 
+    /**
+     * Test whether we can abbreviate a number
+     */
+
     public function testCanAbbreviateNumber()
     {
 
@@ -17,6 +21,10 @@ final class AbbreviateNumberTest extends TestCase
 
     }
 
+    /**
+     * Test whether we can deabbreviate a number
+     */
+
     public function testCanDeabbreviateNumber()
     {
 
@@ -26,6 +34,10 @@ final class AbbreviateNumberTest extends TestCase
         $this->assertSame(10_800_000_000, NumberConverter::abbreviateToNumber("10.8 B"));
 
     }
+
+    /**
+     * Test if we give an invalid format will it throw an exception
+     */
 
     public function testCanThrowException()
     {

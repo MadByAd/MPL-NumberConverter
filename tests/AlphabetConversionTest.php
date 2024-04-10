@@ -8,6 +8,10 @@ use PHPUnit\Framework\TestCase;
 final class AlphabetConversionTest extends TestCase
 {
 
+    /**
+     * Test whether we can convert a number to alphabet
+     */
+
     public function testCanConvertNumberToAlphabet()
     {
 
@@ -18,6 +22,10 @@ final class AlphabetConversionTest extends TestCase
 
     }
 
+    /**
+     * Test whether we can convert an alphabet to number
+     */
+
     public function testCanConvertAlphabetToNumber()
     {
 
@@ -27,6 +35,10 @@ final class AlphabetConversionTest extends TestCase
         $this->assertSame(52, NumberConverter::alphabetToNumber("ZZ"));
 
     }
+
+    /**
+     * Test if we give an invalid value will it throw an exception
+     */
 
     public function testCanThrowException()
     {
