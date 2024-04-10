@@ -92,7 +92,7 @@ trait RomanConverter
     public static function numberToRoman(int $number)
     {
 
-        if($number <= 0) {
+        if($number < 0) {
             throw new RomanValueNegativeException("error cannot convert negative number to roman numeral");
         }
 
