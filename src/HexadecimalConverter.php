@@ -41,8 +41,8 @@ trait HexadecimalConverter
      * @example The number `159` will be converted to `9F`
      * @example The number `1200` will be converted to `4B0`
      * 
-     * @param int $int the integer which will be converted
-     * @param bool $uppercase determine whether the letter should be uppercased or not
+     * @param int  $int       The integer which will be converted
+     * @param bool $uppercase Determine whether the letter should be uppercased or not
      * 
      * @return string The hexadecimal string
      */

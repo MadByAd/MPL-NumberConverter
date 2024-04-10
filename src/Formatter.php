@@ -40,7 +40,7 @@ trait Formatter
      * 
      * @example The integer `1000000` will be converted to  `1.000.000`
      * 
-     * @param int $integer The integer which will be formatted
+     * @param int    $integer        The integer which will be formatted
      * @param string $separatorStyle The separator style (must be any character
      *                               except `a-z` `A-Z` `0-9`)
      * 
