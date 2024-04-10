@@ -31,6 +31,7 @@ class NumberConverter
     use BinaryConverter;
     use Formatter;
     use HexadecimalConverter;
+    use OctalConverter;
     use RomanConverter;
     
 }
