@@ -12,6 +12,14 @@ The MPL (MadByAd PHP Library) Number Converter is a simple PHP library which is 
   - [Octal Conversion](#octal-conversion)
   - [Roman Conversion](#roman-conversion)
 
+## Installation
+
+to install the package go ahead and open composer then write the command
+
+```
+composer require madbyad/mpl-number-converter
+```
+
 ##  Abbreviating Number
 
 To abbreviate or deabbreviate number you can use the `numberToAbbreviate` or `abbreviateToNumber` method.
