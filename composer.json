@@ -23,6 +23,7 @@
     "require": {
         "PHP" : ">=7.0.0"
     },
+    "minimum-stability": "stable",
     "require-dev": {
         "phpunit/phpunit": "9.6.x-dev"
     }
