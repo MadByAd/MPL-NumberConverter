@@ -3,8 +3,6 @@
     "description": "A simple PHP library used for number conversion",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
-    "minimum-stability": "stable",
     "keywords": [
         "Number Converter",
         "Converter",
