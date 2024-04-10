@@ -140,7 +140,7 @@ trait Abbreviater
      * ]
      * ```
      * 
-     * @return int the deabbreviated number
+     * @return int The deabbreviated number
      * 
      * @throws AbbreviaterInvalidSymbolException if the symbol is invalid
      */
