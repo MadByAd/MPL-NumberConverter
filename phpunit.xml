@@ -2,6 +2,7 @@
     <testsuites>
         <testsuite name="number">
             <file>tests/AbbreviateNumberTest.php</file>
+            <file>tests/FormatNumberTest.php</file>
             <file>tests/AlphabetConversionTest.php</file>
             <file>tests/BinaryConversionTest.php</file>
             <file>tests/HexadecimalConversionTest.php</file>
