@@ -29,6 +29,7 @@ class NumberConverter
     use Abbreviater;
     use AlphabetConverter;
     use BinaryConverter;
+    use HexadecimalConverter;
     use RomanConverter;
     
 }
