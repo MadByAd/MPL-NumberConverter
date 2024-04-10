@@ -41,19 +41,19 @@ trait HexadecimalConverter
      * @example The number `159` will be converted to `9F`
      * @example The number `1200` will be converted to `4B0`
      * 
-     * @param int  $int       The integer which will be converted
+     * @param int  $number    The number which will be converted
      * @param bool $uppercase Determine whether the letter should be uppercased or not
      * 
      * @return string The hexadecimal string
      */
 
-    public static function numberToHexadecimal(int $int, bool $uppercase = false)
+    public static function numberToHexadecimal(int $number, bool $uppercase = true)
     {
         
         if($uppercase) {
-            return strtoupper(dechex($int));
+            return strtoupper(dechex($number));
         } else {
-            return dechex($int);
+            return dechex($number);
         }
 
     }

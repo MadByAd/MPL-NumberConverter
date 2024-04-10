@@ -79,7 +79,7 @@ trait RomanConverter
      * @example the number `64` will be converted to `LXIV`
      * @example the number `128` will be converted to `CXXVIII`
      * 
-     * @param int $int the number which will be converted to roman numeral
+     * @param int $number the number which will be converted to roman numeral
      * 
      * @return string The roman numeral
      * 
@@ -89,30 +89,30 @@ trait RomanConverter
      *                                  limit which is `10.000.000`
      */
 
-    public static function numberToRoman(int $int)
+    public static function numberToRoman(int $number)
     {
 
-        if($int <= 0) {
+        if($number <= 0) {
             throw new RomanValueNegativeException("error cannot convert negative number to roman numeral");
         }
 
-        if($int == 0) {
+        if($number == 0) {
             throw new RomanValueZeroException("error cannot convert a zero to a roman numeral no letter exist");
         }
 
-        if($int >= self::$romanLimit) {
+        if($number >= self::$romanLimit) {
             throw new RomanValueLimitException("error cannot convert values higher than 10.000.000");
         }
 
         $roman = "";
 
-        while($int > 0) {
+        while($number > 0) {
             
             foreach(self::$romanLetter as $value => $symbol) {
             
-                if($int >= $value) {
+                if($number >= $value) {
                     $roman .= $symbol;
-                    $int -= $value;
+                    $number -= $value;
                     break;
                 }
             

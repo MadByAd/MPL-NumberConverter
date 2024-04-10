@@ -40,14 +40,14 @@ trait BinaryConverter
      * @example The number `18` will be converted to `10010`
      * @example The number `64` will be converted to `1000000`
      * 
-     * @param int $int The number which will be converted
+     * @param int $number The number which will be converted
      * 
      * @return string The binary string
      */
 
-    public static function numberToBinary(int $int)
+    public static function numberToBinary(int $number)
     {
-        return decbin($int);
+        return decbin($number);
     }
 
     /**

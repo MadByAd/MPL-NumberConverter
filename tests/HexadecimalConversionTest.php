@@ -14,11 +14,11 @@ final class HexadecimalConversionTest extends TestCase
     public function testCanConvertNumberToHexadecimal()
     {
 
-        $this->assertSame("a", NumberConverter::numberToHexadecimal(10));
-        $this->assertSame("9f", NumberConverter::numberToHexadecimal(159));
-        $this->assertSame("4b0", NumberConverter::numberToHexadecimal(1200));
-        $this->assertSame("4B0", NumberConverter::numberToHexadecimal(1200, true));
-        $this->assertNotSame("4b0", NumberConverter::numberToHexadecimal(1200, true));
+        $this->assertSame("A", NumberConverter::numberToHexadecimal(10));
+        $this->assertSame("9F", NumberConverter::numberToHexadecimal(159));
+        $this->assertSame("4B0", NumberConverter::numberToHexadecimal(1200));
+        $this->assertSame("4b0", NumberConverter::numberToHexadecimal(1200, false));
+        $this->assertNotSame("4B0", NumberConverter::numberToHexadecimal(1200, false));
 
     }
 

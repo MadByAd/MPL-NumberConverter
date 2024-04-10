@@ -41,14 +41,14 @@ trait OctalConverter
      * @example The number `64` will be converted to `100`
      * @example The number `511` will be converted to `777`
      * 
-     * @param int $int the integer which will be converted
+     * @param int $number the number which will be converted
      * 
      * @return string The octal string
      */
 
-    public static function numberToOctal(int $int)
+    public static function numberToOctal(int $number)
     {
-        return decoct($int);
+        return decoct($number);
     }
 
     /**

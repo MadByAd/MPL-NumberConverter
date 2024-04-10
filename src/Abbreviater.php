@@ -55,9 +55,9 @@ trait Abbreviater
      * @example the number `12.000` will be abbreviated to `12 K`
      * @example the number `1.250.000` will be abbreviated to `1.3 M`
      * 
-     * @param int   $number    the number which will be abbreviated
-     * @param int   $precision determine how many integer behind the decimal point
-     * @param array $symbolSet define the symbol set which is the symbol to use
+     * @param int   $number    The number which will be abbreviated
+     * @param int   $precision Determine how many integer behind the decimal point
+     * @param array $symbolSet Define the symbol set which is the symbol to use
      * when the number is higher than a certain digit. To define a custom symbolSet
      * the parameter must be an associative array where the key represent the
      * digit count and the value corresponds to the symbol to use e.g
@@ -113,8 +113,8 @@ trait Abbreviater
      * @example the number `12 K` will be deabbreviated to `12.000`
      * @example the number `1.3 M` will be deabbreviated to `1.300.000`
      * 
-     * @param string $abbreviatedNumber the abbreviated number
-     * @param array  $symbolSet         define the symbol set which is the symbol to use
+     * @param string $abbreviatedNumber The abbreviated number
+     * @param array  $symbolSet         Define the symbol set which is the symbol to use
      * when the number is higher than a certain digit. To define a custom symbolSet
      * the parameter must be an associative array where the key represent the
      * digit count and the value corresponds to the symbol to use e.g

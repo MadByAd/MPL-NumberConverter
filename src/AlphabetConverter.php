@@ -72,7 +72,8 @@ trait AlphabetConverter
      * @example the number `32` will be converted to `ZF`
      * @example the number `52` will be converted to `ZZ`
      * 
-     * @param int $number the number which will be converted to an alphabet
+     * @param int $number       The number which will be converted to an alphabet
+     * @param string $uppercase Determine whether to use uppercase or lowercase letter
      * 
      * @return string The alphabet
      * 
@@ -81,7 +82,7 @@ trait AlphabetConverter
      * @throws AlphabetValueZeroException if the given number is zero `0`
      */
 
-    public static function numberToAlphabet(int $number)
+    public static function numberToAlphabet(int $number, bool $uppercase = true)
     {
 
         if($number < 0) {
@@ -110,6 +111,9 @@ trait AlphabetConverter
 
         }
 
+        if(!$uppercase) {
+            return strtolower($alphabet);
+        }
         return $alphabet;
 
     }
@@ -125,7 +129,7 @@ trait AlphabetConverter
      * 
      * @param string $alphabet The alphabet which will be converted into a number
      * 
-     * @return int the number
+     * @return int The number
      * 
      * @throws AlphabetInvalidLetterException if the string contains an invalid
      *                                        letter (non alphabet character)
@@ -133,6 +137,8 @@ trait AlphabetConverter
 
     public static function alphabetToNumber(string $alphabet)
     {
+
+        $alphabet = strtoupper($alphabet);
 
         $number = 0;
 

@@ -3,6 +3,13 @@
     "description": "A simple PHP library used for number conversion",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "stable",
+    "keywords": [
+        "Number Converter",
+        "Converter",
+        "Number",
+        "Formatter"
+    ],
     "autoload": {
         "psr-4": {
             "MadByAd\\MPLNumberConverter\\": "src/"
@@ -14,7 +21,9 @@
             "email": "adityaaw84@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "require": {
+        "PHP" : ">=7.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "9.6.x-dev"
     }
