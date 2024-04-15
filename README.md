@@ -4,6 +4,7 @@
 The MPL (MadByAd PHP Library) Number Converter is a simple PHP library which is used for number conversion and others such as converting a number to a roman numeral e.g `12` to `XII`, abbreviating a number e.g `25.690` to `25.6K`, formatting a number e.g `1000000` to `1.000.000` and other number manipulation function.
 
 - [MPL Number Converter](#mpl-number-converter)
+  - [Installation](#installation)
   - [Abbreviating Number](#abbreviating-number)
   - [Formating Number](#formating-number)
   - [Alphabet Conversion](#alphabet-conversion)
@@ -28,19 +29,19 @@ The `numberToAbbreviate(int $number, int $precision = 1, array $symbolSet = null
 
 **Example 1**
 
-```
+```php
 echo NumberConverter::numberToAbbreviate(1250000);
 ```
 
 **output**
 
-```
+```php
 "1.3 M"
 ```
 
 **Example 2**
 
-```
+```php
 echo NumberConverter::numberToAbbreviate(1250000, [
     10**3 => "RB",
     10**6 => "JT",
@@ -51,7 +52,7 @@ echo NumberConverter::numberToAbbreviate(1250000, [
 
 **output**
 
-```
+```php
 "1.3 JT"
 ```
 
@@ -59,19 +60,19 @@ The `abbreviateToNumber(string $abbreviatedNumber, array $symbolSet = null)` met
 
 **Example 1**
 
-```
+```php
 echo NumberConverter::numberToAbbreviate("1.3 M");
 ```
 
 **output**
 
-```
+```php
 1300000
 ```
 
 **Example 2**
 
-```
+```php
 echo NumberConverter::numberToAbbreviate("1.3 JT", [
     10**3 => "RB",
     10**6 => "JT",
@@ -82,7 +83,7 @@ echo NumberConverter::numberToAbbreviate("1.3 JT", [
 
 **output**
 
-```
+```php
 1300000
 ```
 
@@ -94,7 +95,7 @@ The `numberToFormat(int $integer, string $separatorStyle = ".")` method is used 
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToFormat(15000000);
 echo NumberConverter::numberToFormat(15000000, "-");
 echo NumberConverter::numberToFormat(15000000, "_");
@@ -103,7 +104,7 @@ echo NumberConverter::numberToFormat(15000000, " ");
 
 **output**
 
-```
+```php
 "15.000.000"
 "15-000-000"
 "15_000_000"
@@ -114,7 +115,7 @@ The `formatToNumber(string $formattedInt)` method is used for unformatting a num
 
 **Example**
 
-```
+```php
 echo NumberConverter::formatToNumber("15.000.000");
 echo NumberConverter::formatToNumber("15-000-000");
 echo NumberConverter::formatToNumber("15_000_000");
@@ -123,7 +124,7 @@ echo NumberConverter::formatToNumber("15 000 000");
 
 **output**
 
-```
+```php
 15000000
 15000000
 15000000
@@ -138,7 +139,7 @@ The `numberToAlphabet(int $number, bool $uppercase = true)` method is used for c
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToAlphabet(1);
 echo NumberConverter::numberToAlphabet(2);
 echo NumberConverter::numberToAlphabet(3);
@@ -152,7 +153,7 @@ echo NumberConverter::numberToAlphabet(6, false);
 
 **output**
 
-```
+```php
 "A"
 "B"
 "C"
@@ -166,7 +167,7 @@ The `alphabetToNumber(string $alphabet)` method is used for converting an alphab
 
 **Example**
 
-```
+```php
 echo NumberConverter::alphabetToNumber("A");
 echo NumberConverter::alphabetToNumber("O");
 echo NumberConverter::alphabetToNumber("Z");
@@ -174,7 +175,7 @@ echo NumberConverter::alphabetToNumber("Z");
 
 **output**
 
-```
+```php
 1
 13
 26
@@ -188,7 +189,7 @@ The `numberToBinary(int $number)` method is used for converting an integer to a 
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToBinary(2);
 echo NumberConverter::numberToBinary(18);
 echo NumberConverter::numberToBinary(64);
@@ -196,7 +197,7 @@ echo NumberConverter::numberToBinary(64);
 
 **output**
 
-```
+```php
 "10"
 "10010"
 "1000000"
@@ -206,7 +207,7 @@ The `binaryToNumber(string $binary)` method is used for converting a binary stri
 
 **Example**
 
-```
+```php
 echo NumberConverter::binaryToNumber("10");
 echo NumberConverter::binaryToNumber("10010");
 echo NumberConverter::binaryToNumber("1000000");
@@ -214,7 +215,7 @@ echo NumberConverter::binaryToNumber("1000000");
 
 **output**
 
-```
+```php
 2
 18
 64
@@ -228,7 +229,7 @@ The `numberToHexadecimal(int $number, bool $uppercase = true)` method is used fo
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToHexadecimal(10);
 echo NumberConverter::numberToHexadecimal(159);
 echo NumberConverter::numberToHexadecimal(1200);
@@ -242,7 +243,7 @@ echo NumberConverter::numberToHexadecimal(1200, false);
 
 **output**
 
-```
+```php
 "A"
 "9F"
 "4B0"
@@ -256,7 +257,7 @@ The `hexadecimalToNumber(string $hexadecimal)` method is used for converting a h
 
 **Example**
 
-```
+```php
 echo NumberConverter::hexadecimalToNumber("A");
 echo NumberConverter::hexadecimalToNumber("9F");
 echo NumberConverter::hexadecimalToNumber("4B0");
@@ -264,7 +265,7 @@ echo NumberConverter::hexadecimalToNumber("4B0");
 
 **output**
 
-```
+```php
 10
 159
 1200
@@ -278,7 +279,7 @@ The `numberToOctal(int $number)` method is used for converting a number to an oc
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToOctal(16);
 echo NumberConverter::numberToOctal(64);
 echo NumberConverter::numberToOctal(511);
@@ -286,7 +287,7 @@ echo NumberConverter::numberToOctal(511);
 
 **output**
 
-```
+```php
 "20"
 "100"
 "777"
@@ -296,7 +297,7 @@ The `octalToNumber(string $octal)` method is used for converting an octal string
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToOctal("20");
 echo NumberConverter::numberToOctal("100");
 echo NumberConverter::numberToOctal("777");
@@ -304,7 +305,7 @@ echo NumberConverter::numberToOctal("777");
 
 **output**
 
-```
+```php
 16
 64
 511
@@ -318,7 +319,7 @@ The `numberToRoman(int $number)` method is used for converting a number to a rom
 
 **Example**
 
-```
+```php
 echo NumberConverter::numberToRoman(1);
 echo NumberConverter::numberToRoman(2);
 echo NumberConverter::numberToRoman(3);
@@ -333,7 +334,7 @@ echo NumberConverter::numberToRoman(10);
 
 **output**
 
-```
+```php
 "I"
 "II"
 "III"
@@ -350,7 +351,7 @@ The `romanToNumber(string $roman)` method is used for converting a roman numeral
 
 **Example**
 
-```
+```php
 echo NumberConverter::romanToNumber("I");
 echo NumberConverter::romanToNumber("II");
 echo NumberConverter::romanToNumber("III");
@@ -365,7 +366,7 @@ echo NumberConverter::romanToNumber("X");
 
 **output**
 
-```
+```php
 1
 2
 3
